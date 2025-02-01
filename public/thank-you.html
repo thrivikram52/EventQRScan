@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ngrok-skip-browser-warning" content="true">
+    <title>Thank You - Bharat Fintech Summit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-purple-500 to-blue-500 h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl shadow-lg max-w-md w-full text-center">
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Thank You!</h1>
+            <p class="text-xl text-gray-600">Your registration has been confirmed</p>
+        </div>
+
+        <div class="space-y-4">
+            <div class="animate-bounce">
+                <svg class="w-16 h-16 mx-auto text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            
+            <p class="text-gray-600">We look forward to meeting you at our booth!</p>
+            
+            <div class="mt-8">
+                <a href="/" class="text-blue-600 hover:text-blue-800 underline">
+                    ← Back to Registration
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get audio data from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const audioData = urlParams.get('audio');
+        
+        if (audioData) {
+            const audio = new Audio(`data:audio/mp3;base64,${audioData}`);
+            audio.play().catch(e => console.error('Error playing audio:', e));
+        }
+    </script>
+</body>
+</html>
