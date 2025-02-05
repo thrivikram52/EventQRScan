@@ -89,7 +89,7 @@ app.post("/submit-form", async (req, res) => {
         
         const welcomeText = `Hello ${name}, Welcome to our Bharath Fintech summit! Thank you for sharing your details! Our sales team will contact you soon.`;
         
-        const request = {
+        /*const request = {
             input: { text: welcomeText },
             voice: {
                 languageCode: 'en-IN',
@@ -104,6 +104,9 @@ app.post("/submit-form", async (req, res) => {
         // Play audio on server
         const audioFile = path.join(__dirname, `welcome_${Date.now()}.mp3`);
         await fs.promises.writeFile(audioFile, response.audioContent, 'binary');
+        */
+        const audioFile = path.join(__dirname, `SharukhKhanV1.mp3`);
+
         
         exec(`afplay "${audioFile}"`, async (error) => {
             if (error) {
@@ -111,7 +114,7 @@ app.post("/submit-form", async (req, res) => {
             }
             // Clean up file after playing
             try {
-                await fs.promises.unlink(audioFile);
+                // await fs.promises.unlink(audioFile);
             } catch (err) {
                 console.error('Error cleaning up audio file:', err);
             }
